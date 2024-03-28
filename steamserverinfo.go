@@ -87,7 +87,7 @@ func GetString(arr []byte, index int) (string, int) {
     data := ""
     for i := index; i < len(arr); i++ {
         index = i
-        if arr[i] == 0x00 {
+        if arr[i] == 0x00 || arr[i] == 0xff {
             break
         } else {
             data = data + string(arr[i])
